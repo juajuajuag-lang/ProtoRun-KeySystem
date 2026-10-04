@@ -1,4 +1,4 @@
-const express = require("express");
+onst express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const fs = require("fs");
@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-const keysPath = path.join(__dirname, "..", "config", "keys.json");
+const keysPath = path.join(__dirname, "..", "config", "keys.local.json");
 
 function loadKeys() {
     try {
