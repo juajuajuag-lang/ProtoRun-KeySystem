@@ -12,11 +12,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-const keysPath = process.env.KEYS_FILE
-    ? process.env.KEYS_FILE
-    : process.env.RENDER
-        ? "/etc/secrets/keys.local.json"
-        : path.join(__dirname, "..", "config", "keys.local.json");
+const keysPath = process.env.KEYS_FILE || "/etc/secrets/keys.local.json";
 
 function loadKeys() {
     try {
