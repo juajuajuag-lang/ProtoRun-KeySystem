@@ -14,7 +14,9 @@ app.use(express.json());
 
 const keysPath = process.env.KEYS_FILE
     ? process.env.KEYS_FILE
-    : path.join(__dirname, "..", "config", "keys.local.json");
+    : process.env.RENDER
+        ? "/etc/secrets/keys.local.json"
+        : path.join(__dirname, "..", "config", "keys.local.json");
 
 function loadKeys() {
     try {
